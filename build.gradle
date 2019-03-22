@@ -1,0 +1,32 @@
+
+plugins {
+    id 'java-gradle-plugin'
+}
+
+repositories {
+	mavenCentral()
+    mavenLocal()
+}
+
+group = 'com.feb29.example.swagger'
+version = '0.1'
+
+gradlePlugin {
+    plugins {
+        greetingsPlugin {
+            id = 'com.feb29.example.swagger'
+            implementationClass = 'com.feb29.example.swagger.plugin.SwaggerCodegenPlugin'
+        }
+    }
+}
+
+dependencies {
+	implementation("io.swagger:swagger-codegen:$swaggerCodegenVersion")
+	
+	testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+}
+
+test {
+    useJUnitPlatform()
+}
