@@ -1,4 +1,4 @@
-package com.feg29.example.swagger.plugin;
+package org.ravinikam.swagger.plugin;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -11,7 +11,7 @@ import org.gradle.api.Task;
 import org.gradle.testfixtures.ProjectBuilder;
 import org.junit.jupiter.api.Test;
 
-import com.feb29.example.swagger.plugin.task.SwaggerGenerateTask;
+import org.ravinikam.swagger.plugin.task.SwaggerGenerateTask;
 
 class SwaggerCodegenPluginTest {
 

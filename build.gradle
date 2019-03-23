@@ -1,6 +1,7 @@
 
 plugins {
     id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.1'
 }
 
 repositories {
@@ -8,16 +9,24 @@ repositories {
     mavenLocal()
 }
 
-group = 'com.feb29.example.swagger'
+group = 'org.ravinikam.swagger.plugin'
 version = '0.1'
 
 gradlePlugin {
     plugins {
-        greetingsPlugin {
-            id = 'com.feb29.example.swagger'
-            implementationClass = 'com.feb29.example.swagger.plugin.SwaggerCodegenPlugin'
+        swaggerPlugin {
+            id = 'org.ravinikam.swagger-codegen-plugin'
+            displayName = 'Swagger codegen plugin' 
+            description = 'Swagger codegen plugin can help to generate api and models on the fly'
+            implementationClass = 'org.ravinikam.swagger.plugin.SwaggerCodegenPlugin'
         }
     }
+}
+
+pluginBundle {
+    website = 'http://www.ravinikam.org' 
+    vcsUrl = 'https://github.com/ravinikam/swagger-codegen-plugin' 
+    tags = ['swagger', 'swagger-codegen', 'openapi', 'oas'] 
 }
 
 dependencies {

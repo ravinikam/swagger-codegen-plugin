@@ -1,4 +1,4 @@
-package com.feb29.example.swagger.plugin.task;
+package org.ravinikam.swagger.plugin.task;
 
 import java.io.File;
 
