@@ -1,5 +1,5 @@
 ## Swagger-Codegen-Plugin
-To generate code from swagger specifications
+To generate api and models from swagger specifications
 
 ```
 buildscript {
@@ -14,3 +14,14 @@ buildscript {
 
 apply plugin: 'org.ravinikam.swagger-codegen-plugin'
 ```
+Task `swaggerGenerate` is depends on `compileJava`, so just do `./gradle build` once you add details as follows:
+
+```
+swaggerGenerate{
+	generatorName = "spring"
+	inputSpec = "$rootDir/petstore.yaml"
+	outputDir = "$rootDir"
+}
+```
+ 
+
